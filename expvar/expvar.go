@@ -13,6 +13,11 @@ import (
 	"time"
 )
 
+func init() {
+	startedAt := expvar.NewString("StartedAt")
+	startedAt.Set(time.Now().Format(time.UnixDate))
+}
+
 func main() {
 	var (
 		s      http.Server
